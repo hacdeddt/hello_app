@@ -1,0 +1,33 @@
+<h1>My App</h1>
+<%= form_tag my_app_index_path, :method => 'post' do %>
+	<table>
+		<tr>
+			<td>Nhập vào số a: </td>
+			<td><%= text_field_tag :a, params[:a] %></td>
+		</tr>
+		<tr>
+			<td>Nhập vào số b: </td>
+			<td><%= text_field_tag :b, params[:b] %></td>
+		</tr>
+		<tr>
+			<td><%= submit_tag 'In ra' %></td>
+		</tr>
+	</table>
+<% end %>
+	<p><%= @a %></p>
+	<p><%= @b %></p>
+	<p>Kết quả: <%= @c %></p>
+<table>
+<% @user.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+ </table>
+ <br>
+<%= link_to 'Back', users_path %>
+<%= link_to 'Biến đối tượng', my_app_instance_var_path %>

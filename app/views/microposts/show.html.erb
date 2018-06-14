@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @micropost.content %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @micropost.user_id %>
+</p>
+<p>Được đăng bởi</p>
+
+<%= @user1.name %>
+<%= @user1.email %>
+ Vào lúc: <%= @micropost.created_at %> Đã chỉnh sửa lần cuối lúc: <%= @micropost.updated_at %>
+
+<br>
+
+<%= link_to 'Edit', edit_micropost_path(@micropost) %> |
+<%= link_to 'Back', microposts_path %>

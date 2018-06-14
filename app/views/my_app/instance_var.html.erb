@@ -1,0 +1,27 @@
+<%= form_tag my_app_instance_var_path, :method => 'post' do %>
+	<table>
+		<tr>
+			<p>Nhập vào số n và in ra số chữ số của n</p>
+		</tr>
+		<tr>
+			<td>Nhập số là: </td>
+			<td><%= text_field_tag :n, params[:n] %></td>
+		</tr>
+		<tr>
+			<td><%= button_tag 'Kết Quả',type: 'reset' %></td>
+		</tr>
+	</table>
+	<%= button_tag %>
+
+<%= button_tag(type: 'button') do content_tag(:strong, 'Ask me!') end %>
+
+
+<%= button_tag "Checkout", data: { disable_with: "Please wait..." } %>
+<%= button_tag "Delete",type: 'submit', data: {confirm: "Bạn muốn delete?"} %>
+<%= button_tag "Delete",type: 'submit', data: {confirm: "Bạn muốn delete?"},disabled: 'true' %>
+
+<% end %>
+<p>Kết quả: <%= @kq %> </p>
+<p><%= @c %></p>
+
+<%= link_to 'Back', my_app_index_path %>

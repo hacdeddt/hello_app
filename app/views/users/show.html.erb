@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+<table>
+	<% @microposts.each do |i| %>
+	<tr>
+		<td>Content: </td>
+		<td><%= i.content %></td>
+		<td>Đã đăng vào lúc: <%= i.created_at %></td>
+		<td><%= link_to 'Edit', edit_micropost_path(i.id) %></td>
+		<td><%= link_to 'Delete', i, method: :delete, data: {confirm: "Are you sure?"} %></td>
+	</tr>
+	<% end %>
+</table>
+<%= render 'microposts/form' %>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
